@@ -6,3 +6,4 @@ EVAL_METRIC = "rouge"
 BATCH_SIZE = 4
 NUM_EPOCHS = 8
 MODEL_OUT = f"{MODEL_CKPT}-finetuned-arxiv"
+INFERENCE = "Vasanth/pegasus-large-finetuned-arxiv"
