@@ -23,11 +23,9 @@ class Model:
 
         args = Seq2SeqTrainingArguments(
             output_dir= config.MODEL_OUT,
-            # evaluation_strategy="epoch",
-            learning_rate=5.6e-5,
+            learning_rate= config.LEARNING_RATE,
             per_gpu_train_batch_size=config.BATCH_SIZE,
-            # per_gpu_eval_batch_size=config.BATCH_SIZE,
-            weight_decay=0.01,
+            weight_decay= config.WEIGHT_DECAY,
             save_total_limit=3,
             num_train_epochs=config.NUM_EPOCHS,
             predict_with_generate=True,
@@ -67,5 +65,4 @@ class Model:
         torch.cuda.empty_cache()
         gc.collect()
         trainer.train()
-        # trainer.evaluate()
         trainer.push_to_hub()
